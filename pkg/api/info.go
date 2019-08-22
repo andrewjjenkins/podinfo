@@ -31,7 +31,7 @@ func (s *Server) infoHandler(w http.ResponseWriter, r *http.Request) {
 		NumCPU:       strconv.FormatInt(int64(runtime.NumCPU()), 10),
 	}
 
-	s.JSONResponse(w, r, data)
+	s.JSONResponseCode(w, r, data, 503)
 }
 
 type RuntimeResponse struct {
